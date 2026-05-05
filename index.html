@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Dollar Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>💰 Smart Dollar Store</h1>
+    <p class="tagline">Everything for $1-$4</p>
+</header>
+
+<div class="controls">
+    <input 
+        type="text" 
+        id="search" 
+        placeholder="Search products..." 
+        aria-label="Search products"
+        oninput="renderProducts()" 
+    />
+    
+    <select id="category" onchange="renderProducts()" aria-label="Filter by category">
+        <option value="all">All Categories</option>
+        <option value="food">Food</option>
+        <option value="home">Home</option>
+        <option value="school">School</option>
+        <option value="toys">Toys</option>
+    </select>
+
+    <div class="cart-summary">
+        <span id="itemCount">0</span> items in cart
+    </div>
+</div>
+
+<main class="container">
+    <div class="products" id="productList"></div>
+
+    <aside class="cart">
+        <h3>🛒 Shopping Cart</h3>
+        <div id="cartItems"></div>
+        <hr>
+        <div class="cart-footer">
+            <p><strong>Total: $<span id="total">0.00</span></strong></p>
+            <button id="checkoutBtn" class="checkout-btn" onclick="checkout()">Checkout</button>
+            <button id="clearBtn" class="clear-btn" onclick="clearCart()">Clear Cart</button>
+        </div>
+    </aside>
+</main>
+
+<footer>
+    <p>© 2026 Smart Dollar Store | Made with ❤️</p>
+</footer>
+
+<script src="products.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
